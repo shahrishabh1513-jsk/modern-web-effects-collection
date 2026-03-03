@@ -110,15 +110,15 @@ A complete collection of 20+ creative tooltip styles with flexible positioning a
 
 ---
 
-# 🛠️ Technologies Used
+## 🛠️ Technologies Used
 
-| Technology      | Usage |
-|----------------|--------|
-| HTML5          | Structure & semantic layout |
-| CSS3           | Styling, animations, UI effects |
-| JavaScript     | Interactivity & functionality |
-| Font Awesome   | Icons & visuals |
-| Google Fonts   | Modern typography |
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Font%20Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Google%20Fonts-4285F4?style=for-the-badge&logo=google&logoColor=white"/>
+</p>
 
 ---
 
@@ -134,3 +134,4 @@ A complete collection of 20+ creative tooltip styles with flexible positioning a
 - Interactive UI logic using JavaScript  
 
 ---
+
