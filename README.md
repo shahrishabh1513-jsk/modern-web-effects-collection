@@ -1,13 +1,7 @@
 <p align="center">
   <img src="https://img.icons8.com/fluency/200/css3.png" width="120"/>
 </p>
-## 🛠️ Technologies Used
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js"/>
-  <img src="https://img.icons8.com/color/48/000000/font-awesome.png"/>
-  <img src="https://img.icons8.com/color/48/000000/google-logo.png"/>
-</p>
 <h1 align="center">🎨 Modern CSS Effects Collection</h1>
 
 <p align="center">
@@ -118,14 +112,12 @@ A complete collection of 20+ creative tooltip styles with flexible positioning a
 
 ## 🛠️ Technologies Used
 
-<p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Font%20Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Google%20Fonts-4285F4?style=for-the-badge&logo=google&logoColor=white"/>
-</p>
+## 🛠️ Technologies Used
 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js"/>
+  <img src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+</p>
 ---
 
 # 🎯 Key Concepts Practiced
@@ -140,5 +132,6 @@ A complete collection of 20+ creative tooltip styles with flexible positioning a
 - Interactive UI logic using JavaScript  
 
 ---
+
 
 
