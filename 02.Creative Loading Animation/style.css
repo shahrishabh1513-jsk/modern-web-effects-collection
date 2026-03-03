@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #00d2ff;
+    --dark-bg: #0a0a0a;
+    --light-bg: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --success-color: #00b894;
+    --warning-color: #fdcb6e;
+    --danger-color: #e17055;
+    --purple: #9b59b6;
+    --blue: #3498db;
+    --green: #2ecc71;
+    --yellow: #f1c40f;
+    --orange: #e67e22;
+    --red: #e74c3c;
+    --pink: #fd79a8;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--dark-bg), var(--light-bg));
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleGlow 2s ease-in-out infinite;
+}
+
+.page-title span {
+    background: linear-gradient(135deg, var(--warning-color), var(--danger-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.animation-section {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animation-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+}
+
+/* Animation 1: Modern Pulsing Dots */
+.loader-modern {
+    display: flex;
+    gap: 15px;
+}
+
+.loader-modern .dot {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    animation: modernPulse 1.5s ease-in-out infinite;
+}
+
+.loader-modern .dot:nth-child(2) {
+    animation-delay: 0.2s;
+    background: linear-gradient(135deg, var(--accent-color), var(--blue));
+}
+
+.loader-modern .dot:nth-child(3) {
+    animation-delay: 0.4s;
+    background: linear-gradient(135deg, var(--success-color), var(--green));
+}
+
+.loader-modern .dot:nth-child(4) {
+    animation-delay: 0.6s;
+    background: linear-gradient(135deg, var(--warning-color), var(--orange));
+}
+
+.loader-modern .dot:nth-child(5) {
+    animation-delay: 0.8s;
+    background: linear-gradient(135deg, var(--danger-color), var(--red));
+}
+
+@keyframes modernPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+        box-shadow: 0 0 20px currentColor;
+    }
+}
+
+/* Animation 2: Spinning Rings */
+.spinner-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.spinner-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid transparent;
+    border-radius: 50%;
+    animation: spinnerRing 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--primary-color) transparent transparent transparent;
+}
+
+.spinner-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+    border-color: var(--accent-color) transparent transparent transparent;
+}
+
+.spinner-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+    border-color: var(--success-color) transparent transparent transparent;
+}
+
+.spinner-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+    border-color: var(--warning-color) transparent transparent transparent;
+}
+
+.spinner-ring div:nth-child(4) {
+    border-color: var(--danger-color) transparent transparent transparent;
+}
+
+@keyframes spinnerRing {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation 3: Bouncing Balls */
+.bouncing-balls {
+    display: flex;
+    gap: 20px;
+}
+
+.bouncing-balls .ball {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    animation: bounce 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.bouncing-balls .ball:nth-child(2) {
+    animation-delay: 0.2s;
+    background: linear-gradient(135deg, var(--success-color), var(--green));
+}
+
+.bouncing-balls .ball:nth-child(3) {
+    animation-delay: 0.4s;
+    background: linear-gradient(135deg, var(--warning-color), var(--orange));
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+/* Animation 4: Progress Bar */
+.progress-loader {
+    width: 300px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        var(--primary-color), 
+        var(--accent-color), 
+        var(--success-color), 
+        var(--warning-color), 
+        var(--danger-color));
+    background-size: 200% 100%;
+    animation: progressLoad 2s linear infinite;
+    border-radius: 10px;
+}
+
+@keyframes progressLoad {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+/* Animation 5: Neon Pulse */
+.neon-pulse {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.neon-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    animation: neonPulse 1.5s ease-in-out infinite;
+}
+
+.neon-circle:nth-child(1) {
+    background: var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-color);
+    animation-delay: 0s;
+}
+
+.neon-circle:nth-child(2) {
+    background: var(--accent-color);
+    box-shadow: 0 0 20px var(--accent-color);
+    animation-delay: 0.3s;
+}
+
+.neon-circle:nth-child(3) {
+    background: var(--success-color);
+    box-shadow: 0 0 20px var(--success-color);
+    animation-delay: 0.6s;
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.8;
+        box-shadow: 0 0 40px currentColor;
+    }
+}
+
+/* Animation 6: 3D Cube Spinner */
+.cube-spinner {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: cubeRotate 3s infinite linear;
+}
+
+.cube-face {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    opacity: 0.9;
+}
+
+.cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(30px); }
+.cube-face:nth-child(2) { transform: rotateY(180deg) translateZ(30px); }
+.cube-face:nth-child(3) { transform: rotateY(90deg) translateZ(30px); }
+.cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(30px); }
+.cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(30px); }
+.cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(30px); }
+
+@keyframes cubeRotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* Animation 7: Ripple Effect */
+.ripple-loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.ripple {
+    position: absolute;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    animation: ripple 2s ease-out infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ripple:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    border-color: var(--primary-color);
+}
+
+.ripple:nth-child(2) {
+    width: 70%;
+    height: 70%;
+    border-color: var(--accent-color);
+    animation-delay: 0.5s;
+}
+
+.ripple:nth-child(3) {
+    width: 40%;
+    height: 40%;
+    border-color: var(--success-color);
+    animation-delay: 1s;
+}
+
+@keyframes ripple {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+/* Animation 8: Text Loader */
+.text-loader {
+    display: flex;
+    gap: 5px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.text-loader span {
+    animation: textPop 1.5s ease-in-out infinite;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-loader span:nth-child(2) { animation-delay: 0.1s; }
+.text-loader span:nth-child(3) { animation-delay: 0.2s; }
+.text-loader span:nth-child(4) { animation-delay: 0.3s; }
+.text-loader span:nth-child(5) { animation-delay: 0.4s; }
+.text-loader span:nth-child(6) { animation-delay: 0.5s; }
+.text-loader span:nth-child(7) { animation-delay: 0.6s; }
+.text-loader span:nth-child(8) { animation-delay: 0.7s; }
+.text-loader span:nth-child(9) { animation-delay: 0.8s; }
+.text-loader span:nth-child(10) { animation-delay: 0.9s; }
+
+@keyframes textPop {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+/* Main Title Animation */
+@keyframes titleGlow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(102, 126, 234, 0.6);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .loader-modern .dot {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .progress-loader {
+        width: 250px;
+    }
+    
+    .text-loader {
+        font-size: 1.5rem;
+    }
+    
+    .cube-spinner {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .cube-face {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Optional: Dark/Light Mode Toggle (if you want to add) */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Loading overlay effect (optional) */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.fade-out {
+    animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

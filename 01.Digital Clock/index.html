@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Clock | Digital Time</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-clock"></i>
+                <span>TimeMaster</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active"><i class="fas fa-clock"></i> Clock</a>
+                <a href="stopwatch.html"><i class="fas fa-stopwatch"></i> Stopwatch</a>
+            </div>
+        </nav>
+
+        <div class="clock-container">
+            <div class="date-section">
+                <div class="day" id="dayName"></div>
+                <div class="date" id="fullDate"></div>
+            </div>
+            
+            <div class="time-display">
+                <div class="time-wrapper">
+                    <span class="time-number" id="hours">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <span class="time-separator">:</span>
+                <div class="time-wrapper">
+                    <span class="time-number" id="minutes">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <span class="time-separator">:</span>
+                <div class="time-wrapper">
+                    <span class="time-number" id="seconds">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+
+            <div class="ampm-section">
+                <span id="ampm">AM</span>
+            </div>
+
+            <div class="greeting-section">
+                <i class="fas fa-sun" id="greetingIcon"></i>
+                <span id="greeting">Good Day</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

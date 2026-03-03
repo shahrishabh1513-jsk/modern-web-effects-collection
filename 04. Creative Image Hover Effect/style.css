@@ -1,0 +1,772 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #00d2ff;
+    --dark-bg: #0a0a0a;
+    --light-bg: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --gradient-1: linear-gradient(135deg, #667eea, #764ba2);
+    --gradient-2: linear-gradient(135deg, #00d2ff, #3a7bd5);
+    --gradient-3: linear-gradient(135deg, #f093fb, #f5576c);
+    --gradient-4: linear-gradient(135deg, #4facfe, #00f2fe);
+    --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-2: 0 20px 40px rgba(102, 126, 234, 0.3);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--dark-bg), var(--light-bg));
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    animation: titleFloat 3s ease-in-out infinite;
+}
+
+.main-title span {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Navigation Styles */
+.effect-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-btn:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+}
+
+.nav-btn.active {
+    background: var(--gradient-1);
+    border: none;
+    box-shadow: var(--shadow-2);
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Card Styles */
+.card {
+    position: relative;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    animation: cardAppear 0.5s ease;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-1);
+    border-color: var(--primary-color);
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-title {
+    transform: translateY(0);
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    transform: translateY(20px);
+    transition: all 0.3s ease 0.1s;
+}
+
+.card:hover .card-description {
+    transform: translateY(0);
+}
+
+.card-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    transform: translateY(20px);
+    transition: all 0.3s ease 0.2s;
+}
+
+.card:hover .card-tags {
+    transform: translateY(0);
+}
+
+.card-tag {
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    backdrop-filter: blur(5px);
+}
+
+/* Effect 1: Clip Path Slice */
+.card.effect-clip1 .card-image {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: clip-path 0.5s ease;
+}
+
+.card.effect-clip1:hover .card-image {
+    clip-path: polygon(20% 0, 80% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+/* Effect 2: Diagonal Split */
+.card.effect-clip2 .card-image {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: clip-path 0.5s ease;
+}
+
+.card.effect-clip2:hover .card-image {
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+}
+
+/* Effect 3: Polygon Transform */
+.card.effect-clip3 .card-image {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: clip-path 0.5s ease;
+}
+
+.card.effect-clip3:hover .card-image {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Effect 4: Overlay Gradient */
+.card.effect-overlay1 .card-overlay {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card.effect-overlay1:hover .card-overlay {
+    opacity: 0.9;
+}
+
+/* Effect 5: Zoom + Rotate */
+.card.effect-zoom:hover img {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Effect 6: Blur Effect */
+.card.effect-blur img {
+    filter: blur(0);
+    transition: filter 0.3s ease;
+}
+
+.card.effect-blur:hover img {
+    filter: blur(5px);
+}
+
+/* Effect 7: Grayscale */
+.card.effect-grayscale img {
+    filter: grayscale(0);
+    transition: filter 0.3s ease;
+}
+
+.card.effect-grayscale:hover img {
+    filter: grayscale(1);
+}
+
+/* Effect 8: Sepia */
+.card.effect-sepia img {
+    filter: sepia(0);
+    transition: filter 0.3s ease;
+}
+
+.card.effect-sepia:hover img {
+    filter: sepia(1);
+}
+
+/* Effect 9: Invert */
+.card.effect-invert img {
+    filter: invert(0);
+    transition: filter 0.3s ease;
+}
+
+.card.effect-invert:hover img {
+    filter: invert(1);
+}
+
+/* Effect 10: Flip */
+.card.effect-flip {
+    perspective: 1000px;
+}
+
+.card.effect-flip .card-image {
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.card.effect-flip:hover .card-image {
+    transform: rotateY(180deg);
+}
+
+/* Effect 11: Skew */
+.card.effect-skew:hover img {
+    transform: skew(10deg, 5deg) scale(1.1);
+}
+
+/* Effect 12: 3D Tilt */
+.card.effect-3d {
+    transition: transform 0.3s ease;
+}
+
+.card.effect-3d:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+}
+
+/* Effect 13: Glitch */
+.card.effect-glitch {
+    position: relative;
+}
+
+.card.effect-glitch::before,
+.card.effect-glitch::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card.effect-glitch:hover::before {
+    opacity: 0.5;
+    transform: translate(5px, 5px);
+    background: var(--primary-color);
+    mix-blend-mode: multiply;
+}
+
+.card.effect-glitch:hover::after {
+    opacity: 0.5;
+    transform: translate(-5px, -5px);
+    background: var(--accent-color);
+    mix-blend-mode: screen;
+}
+
+/* Effect 14: Shine */
+.card.effect-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.card.effect-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+    z-index: 2;
+}
+
+.card.effect-shine:hover::before {
+    left: 100%;
+}
+
+/* Effect 15: Pulse */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(102, 126, 234, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+    }
+}
+
+.card.effect-pulse:hover {
+    animation: pulse 1.5s infinite;
+}
+
+/* Effect 16: Border Glow */
+.card.effect-border {
+    position: relative;
+}
+
+.card.effect-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #ff0000, #ff7300, #fffb00, 
+        #48ff00, #00ffd5, #002bff, 
+        #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    border-radius: 22px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.card.effect-border:hover::before {
+    opacity: 1;
+    animation: borderGlow 20s linear infinite;
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Effect 17: Wave */
+.card.effect-wave {
+    position: relative;
+    overflow: hidden;
+}
+
+.card.effect-wave::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(102, 126, 234, 0.3);
+    transition: top 0.3s ease;
+    z-index: 1;
+}
+
+.card.effect-wave:hover::after {
+    top: 0;
+}
+
+/* Effect 18: Smoke */
+.card.effect-smoke {
+    position: relative;
+    overflow: hidden;
+}
+
+.card.effect-smoke::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: 1;
+    filter: blur(30px);
+}
+
+.card.effect-smoke:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: lightboxFade 0.3s ease;
+}
+
+@keyframes lightboxFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    padding: 20px;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.close-lightbox:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: var(--gradient-1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 25px;
+    background: var(--gradient-1);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-2);
+    z-index: 999;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fab:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+}
+
+.fab i {
+    font-size: 1.2rem;
+}
+
+/* Effects Panel */
+.effects-panel {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 300px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 20px;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 998;
+}
+
+.effects-panel.active {
+    transform: translateX(0);
+}
+
+.effects-panel h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.effects-panel .close-panel {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.effects-panel .close-panel:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.effect-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.effect-item {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.effect-item:hover {
+    background: var(--gradient-1);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.effect-item.active {
+    background: var(--gradient-1);
+    color: white;
+}
+
+/* Loading Animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-bg);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.loading.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .effect-nav {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .nav-btn {
+        width: 100%;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .fab {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+    }
+
+    .effects-panel {
+        bottom: 90px;
+        right: 20px;
+        width: 280px;
+    }
+}

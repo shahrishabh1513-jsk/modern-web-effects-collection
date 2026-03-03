@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Tooltips | 20+ Creative Designs</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1 class="main-title">Modern <span>Tooltip</span> Designs</h1>
+        <p class="subtitle">Explore 20+ creative tooltip styles with animations, gradients, and interactive elements</p>
+    </header>
+
+    <div class="container">
+        <!-- Tooltip Style Selector -->
+        <div class="style-selector">
+            <h3>Select Tooltip Style <i class="fas fa-palette"></i></h3>
+            <div class="style-buttons">
+                <button class="style-btn active" data-style="default">Default</button>
+                <button class="style-btn" data-style="gradient">Gradient</button>
+                <button class="style-btn" data-style="neon">Neon Glow</button>
+                <button class="style-btn" data-style="3d">3D</button>
+                <button class="style-btn" data-style="glass">Glassmorphism</button>
+                <button class="style-btn" data-style="border">Animated Border</button>
+                <button class="style-btn" data-style="shadow">Shadow</button>
+                <button class="style-btn" data-style="rainbow">Rainbow</button>
+            </div>
+        </div>
+
+        <!-- Position Selector -->
+        <div class="position-selector">
+            <h3>Tooltip Position <i class="fas fa-arrows-alt"></i></h3>
+            <div class="position-buttons">
+                <button class="position-btn active" data-position="top">Top</button>
+                <button class="position-btn" data-position="bottom">Bottom</button>
+                <button class="position-btn" data-position="left">Left</button>
+                <button class="position-btn" data-position="right">Right</button>
+            </div>
+        </div>
+
+        <!-- Basic Tooltips Section -->
+        <section class="tooltip-section">
+            <h2 class="section-title"><i class="fas fa-star"></i> Basic Tooltips</h2>
+            <div class="tooltip-grid">
+                <!-- Text Tooltip -->
+                <div class="tooltip-item">
+                    <div class="tooltip-trigger" data-tooltip="This is a simple text tooltip">
+                        <i class="fas fa-font"></i>
+                        <span>Text Tooltip</span>
+                    </div>
+                </div>
+
+                <!-- Icon Tooltip -->
+                <div class="tooltip-item">
+                    <div class="tooltip-trigger" data-tooltip="Settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Icon Tooltip</span>
+                    </div>
+                </div>
+
+                <!-- Image Tooltip -->
+                <div class="tooltip-item">
+                    <div class="tooltip-trigger" data-tooltip="<img src='https://i.pravatar.cc/50?img=1' alt='avatar' class='tooltip-image'> John Doe">
+                        <i class="fas fa-image"></i>
+                        <span>Image Tooltip</span>
+                    </div>
+                </div>
+
+                <!-- HTML Tooltip -->
+                <div class="tooltip-item">
+                    <div class="tooltip-trigger" data-tooltip="<i class='fas fa-heart' style='color: red;'></i> <b>HTML</b> <i>Content</i>">
+                        <i class="fas fa-code"></i>
+                        <span>HTML Tooltip</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Tooltips Section -->
+        <section class="tooltip-section">
+            <h2 class="section-title"><i class="fas fa-magic"></i> Interactive Tooltips</h2>
+            <div class="tooltip-grid">
+                <!-- Button with Tooltip -->
+                <div class="tooltip-item">
+                    <button class="tooltip-btn" data-tooltip="Click to save">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                </div>
+
+                <!-- Link with Tooltip -->
+                <div class="tooltip-item">
+                    <a href="#" class="tooltip-link" data-tooltip="Visit documentation">
+                        <i class="fas fa-book"></i> Documentation
+                    </a>
+                </div>
+
+                <!-- Avatar with Tooltip -->
+                <div class="tooltip-item">
+                    <div class="avatar" data-tooltip="John Doe - Admin">
+                        <img src="https://i.pravatar.cc/50?img=2" alt="avatar">
+                    </div>
+                </div>
+
+                <!-- Badge with Tooltip -->
+                <div class="tooltip-item">
+                    <span class="badge" data-tooltip="Pro Member">
+                        <i class="fas fa-crown"></i> PRO
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Tooltips Section -->
+        <section class="tooltip-section">
+            <h2 class="section-title"><i class="fas fa-crown"></i> Advanced Tooltips</h2>
+            <div class="tooltip-grid">
+                <!-- Progress Tooltip -->
+                <div class="tooltip-item">
+                    <div class="progress-trigger" data-tooltip="75% Complete">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <span>Progress</span>
+                    </div>
+                </div>
+
+                <!-- Rating Tooltip -->
+                <div class="tooltip-item">
+                    <div class="rating-trigger" data-tooltip="★★★★★ (4.8)">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>Rating</span>
+                    </div>
+                </div>
+
+                <!-- Social Tooltip -->
+                <div class="tooltip-item">
+                    <div class="social-trigger">
+                        <i class="fab fa-twitter" data-tooltip="Follow on Twitter"></i>
+                        <i class="fab fa-facebook" data-tooltip="Like on Facebook"></i>
+                        <i class="fab fa-instagram" data-tooltip="Follow on Instagram"></i>
+                    </div>
+                </div>
+
+                <!-- Notification Tooltip -->
+                <div class="tooltip-item">
+                    <div class="notification-trigger" data-tooltip="3 new messages">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                        <span>Notifications</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Tooltips Section -->
+        <section class="tooltip-section">
+            <h2 class="section-title"><i class="fas fa-edit"></i> Form Tooltips</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="username" data-tooltip="Enter your username (min. 3 characters)">Username</label>
+                    <input type="text" id="username" placeholder="john_doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" data-tooltip="Enter a valid email address">Email</label>
+                    <input type="email" id="email" placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" data-tooltip="Password must be at least 8 characters">Password</label>
+                    <input type="password" id="password" placeholder="••••••••">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm" data-tooltip="Re-enter your password">Confirm Password</label>
+                    <input type="password" id="confirm" placeholder="••••••••">
+                </div>
+
+                <button class="submit-btn" data-tooltip="Click to register">Register</button>
+            </div>
+        </section>
+
+        <!-- Tooltip Showcase Grid -->
+        <section class="tooltip-section">
+            <h2 class="section-title"><i class="fas fa-th"></i> Tooltip Showcase</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item" data-tooltip="Top tooltip" data-position="top">Top</div>
+                <div class="showcase-item" data-tooltip="Bottom tooltip" data-position="bottom">Bottom</div>
+                <div class="showcase-item" data-tooltip="Left tooltip" data-position="left">Left</div>
+                <div class="showcase-item" data-tooltip="Right tooltip" data-position="right">Right</div>
+                <div class="showcase-item" data-tooltip="<i>Rich</i> <b>HTML</b> <u>content</u>">HTML</div>
+                <div class="showcase-item" data-tooltip="Long tooltip content that will wrap to multiple lines automatically">Long Text</div>
+                <div class="showcase-item" data-tooltip="⚠️ Warning message">Warning</div>
+                <div class="showcase-item" data-tooltip="✅ Success message">Success</div>
+                <div class="showcase-item" data-tooltip="❌ Error message">Error</div>
+                <div class="showcase-item" data-tooltip="ℹ️ Info message">Info</div>
+                <div class="showcase-item" data-tooltip="🔔 Notification">Alert</div>
+                <div class="showcase-item" data-tooltip="💡 Tip: Hover to see">Tip</div>
+            </div>
+        </section>
+
+        <!-- Code Example Section -->
+        <section class="code-section">
+            <h2 class="section-title"><i class="fas fa-code"></i> Implementation Code</h2>
+            <div class="code-block">
+                <pre><code>&lt;!-- HTML --&gt;
+&lt;div class="tooltip-trigger" data-tooltip="Your tooltip text"&gt;
+    Hover me
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+[data-tooltip]:hover:before {
+    visibility: visible;
+    opacity: 1;
+    bottom: calc(100% + 10px);
+}</code></pre>
+            </div>
+        </section>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fab" id="fab">
+        <i class="fas fa-cog"></i>
+    </button>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settingsPanel">
+        <h3>Settings <i class="fas fa-times close-panel"></i></h3>
+        
+        <div class="setting-group">
+            <label>Animation Speed</label>
+            <input type="range" id="speedSlider" min="0.1" max="1" step="0.1" value="0.3">
+            <span id="speedValue">0.3s</span>
+        </div>
+
+        <div class="setting-group">
+            <label>Tooltip Offset</label>
+            <input type="range" id="offsetSlider" min="5" max="30" value="10">
+            <span id="offsetValue">10px</span>
+        </div>
+
+        <div class="setting-group">
+            <label>Font Size</label>
+            <input type="range" id="fontSlider" min="12" max="20" value="14">
+            <span id="fontValue">14px</span>
+        </div>
+
+        <div class="setting-group">
+            <label>
+                <input type="checkbox" id="roundedCheckbox" checked> Rounded Corners
+            </label>
+        </div>
+
+        <div class="setting-group">
+            <label>
+                <input type="checkbox" id="shadowCheckbox" checked> Show Shadow
+            </label>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
