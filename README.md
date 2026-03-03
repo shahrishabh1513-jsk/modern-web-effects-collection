@@ -1,7 +1,13 @@
 <p align="center">
   <img src="https://img.icons8.com/fluency/200/css3.png" width="120"/>
 </p>
+## 🛠️ Technologies Used
 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js"/>
+  <img src="https://img.icons8.com/color/48/000000/font-awesome.png"/>
+  <img src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+</p>
 <h1 align="center">🎨 Modern CSS Effects Collection</h1>
 
 <p align="center">
@@ -134,4 +140,5 @@ A complete collection of 20+ creative tooltip styles with flexible positioning a
 - Interactive UI logic using JavaScript  
 
 ---
+
 
